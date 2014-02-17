@@ -6,7 +6,7 @@
 
 package CLI;
 
-import java.util.Scanner;
+
 
 /**
  *
@@ -18,16 +18,13 @@ public class IpisOpcija {
     private static String opcija3 = "Predaj rijesenje";
     private static String opcija4 = "Deregistracija postojeceg korisnika";
     
-    public static int getSelectedOption(){
-        int selectedOption = 0;
-        System.out.println(opcija1
-                + "\n" + opcija2 
-                + "\n" + opcija3
-                + "\n" + opcija4 
-                + "\n");
-        Scanner sc = new Scanner (System.in);
-        selectedOption = sc.nextInt();
-        return selectedOption;
+    @Override
+    public String toString(){
+        return opcija1 + "\n" + opcija2 + 
+                "\n" + opcija3 + 
+                "\n" + opcija4;
+        
     }
-    
 }
+
+
