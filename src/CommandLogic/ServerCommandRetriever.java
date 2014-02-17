@@ -23,14 +23,14 @@ public class ServerCommandRetriever {
         return serverLocation + cmd + newCommand + name;
     }
     
-    static public String MakeNewGame(String ID){
+    static public String makeNewGame(String ID){
         
         String newCommand = "new&ID=";
        
         return serverLocation + cmd + newCommand + ID;    
     }
       
-    static public String CheckSolution(String solution, String ID){
+    static public String checkSolution(String solution, String ID){
         
         String newCommand = "check&solution=";
         
@@ -39,7 +39,7 @@ public class ServerCommandRetriever {
         return serverLocation + cmd + newCommand + solution + addedCommand + ID;
     }
     
-     static public String UnregisterPlayer(String ID){
+     static public String unregisterPlayer(String ID){
         
         String newCommand = "unregister&ID=";
        

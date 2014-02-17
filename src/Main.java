@@ -43,19 +43,19 @@ public class Main {
 
             case 2:
                 System.out.println("\n Igra Vam je: \n");
-                System.out.println(ServerCommandRetriever.MakeNewGame("8457754432790416709"));
+                System.out.println(ServerCommandRetriever.makeNewGame("8457754432790416709"));
 
                 break; //TODO : dodati object i metodu za dohvacanje igra slanjem ID-a
 
             case 3:
                 System.out.println("\n Unesite Vase rijesenje: \n");
                 
-                System.out.println(ServerCommandRetriever.CheckSolution("18489499648484", "18416816515"));
+                System.out.println(ServerCommandRetriever.checkSolution("18489499648484", "18416816515"));
                 break;//TODO : dodati object i metodu za slanje rijesenja igre slanjem ID-a
 
             case 4:
                 System.out.println("\n Unesite ime koje zelite de-registirati: \n");
-                System.out.println(ServerCommandRetriever.UnregisterPlayer("18416816515"));
+                System.out.println(ServerCommandRetriever.unregisterPlayer("18416816515"));
                 break;// TODO metoda za dereg
 
             default:
