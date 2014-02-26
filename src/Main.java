@@ -1,5 +1,6 @@
 
 import CLI.IpisOpcija;
+import CommandLogic.PlayerHolder;
 import CommandLogic.ServerCommandRetriever;
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -20,42 +21,58 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) throws MalformedURLException, IOException {
-        int optionSelected = 0;
+        int optionSelected = 100;
+        String name = null;
+        String solution = null;
         Scanner sc = new Scanner(System.in);
         IpisOpcija ispisniObjekt = new IpisOpcija();
-        System.out.println(ispisniObjekt.toString());
-        if (sc.hasNextInt()) {
+        PlayerHolder ph = new PlayerHolder();
+        
+       while(optionSelected != 0){
+       
+System.out.println(ispisniObjekt.toString());
+ if (sc.hasNextInt()) {
             optionSelected = sc.nextInt();
         }
-
         sc.nextLine();
         switch (optionSelected) {
             case 1:
                 System.out.println("\nUnesite ime za registraciju: \n");
-                System.out.println(ServerCommandRetriever.registerPlayer("Tomo"));
-                URL url = new URL(ServerCommandRetriever.registerPlayer("Tomo"));
-                InputStream in = new BufferedInputStream(url.openStream());
-                Scanner sc2 = new Scanner(in);
-                System.out.println(sc2.nextLine()); 
-                
+                name = sc.nextLine();
+                ph.addPlayer(name, ServerCommandRetriever.registerPlayer(name) );
+                //System.out.println(ServerCommandRetriever.registerPlayer(name));
 
                 break;
 
             case 2:
-                System.out.println("\n Igra Vam je: \n");
+                System.out.println("\n Unesite ime po kojem zelite igru: \n");
+
+                name = sc.nextLine();
+                //ph.getIdWithName(name);
+
                 System.out.println(ServerCommandRetriever.makeNewGame("8457754432790416709"));
 
                 break; //TODO : dodati object i metodu za dohvacanje igra slanjem ID-a
 
             case 3:
+                System.out.println("\n Unesite ime po kojem zelite predati rijesenje  \n");
+
+                name = sc.nextLine();
+               
+
                 System.out.println("\n Unesite Vase rijesenje: \n");
-                
-                System.out.println(ServerCommandRetriever.checkSolution("18489499648484", "18416816515"));
+
+                solution = sc.nextLine();
+               
+
+                System.out.println(ServerCommandRetriever.checkSolution(solution, name));
                 break;//TODO : dodati object i metodu za slanje rijesenja igre slanjem ID-a
 
             case 4:
                 System.out.println("\n Unesite ime koje zelite de-registirati: \n");
-                System.out.println(ServerCommandRetriever.unregisterPlayer("18416816515"));
+                name = sc.nextLine();
+                System.out.println(ph.removePlayer(name));
+                //System.out.println(ServerCommandRetriever.unregisterPlayer(name));
                 break;// TODO metoda za dereg
 
             default:
@@ -63,4 +80,6 @@ public class Main {
                 break;
         }
     }
+    }
+    
 }

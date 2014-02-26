@@ -13,6 +13,7 @@ class Player {
 
     String playerName = null;
     String playerID = null;
+    String zadatak = null;
 
     Player(String name, String ID) {
         if (name != null && ID != null) {
@@ -41,6 +42,16 @@ class Player {
     String getID() {
         return playerID;
     }
+    
+   String getGame() {
+        return zadatak;
+    }
+
+    void setGame(String game) {
+        zadatak = game;
+    }
+    
+    
     
     @Override
     public String toString(){
