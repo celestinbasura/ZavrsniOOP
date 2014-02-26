@@ -4,6 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Celestin/Documents/NetBeansProjects/ZavrsniOOP/src/Main.java</file>
+            <file>file:/C:/Users/Celestin/Documents/NetBeansProjects/ZavrsniOOP/src/CommandLogic/Player.java</file>
+            <file>file:/C:/Users/Celestin/Documents/NetBeansProjects/ZavrsniOOP/src/CommandLogic/ServerCommandRetriever.java</file>
+            <file>file:/C:/Users/Celestin/Documents/NetBeansProjects/ZavrsniOOP/src/CommandLogic/PlayerHolder.java</file>
         </group>
     </open-files>
 </project-private>

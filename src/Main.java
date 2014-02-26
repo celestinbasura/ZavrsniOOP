@@ -27,59 +27,57 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         IpisOpcija ispisniObjekt = new IpisOpcija();
         PlayerHolder ph = new PlayerHolder();
-        
-       while(optionSelected != 0){
-       
-System.out.println(ispisniObjekt.toString());
- if (sc.hasNextInt()) {
-            optionSelected = sc.nextInt();
-        }
-        sc.nextLine();
-        switch (optionSelected) {
-            case 1:
-                System.out.println("\nUnesite ime za registraciju: \n");
-                name = sc.nextLine();
-                ph.addPlayer(name, ServerCommandRetriever.registerPlayer(name) );
-                //System.out.println(ServerCommandRetriever.registerPlayer(name));
 
-                break;
+        while (optionSelected != 0) {
 
-            case 2:
-                System.out.println("\n Unesite ime po kojem zelite igru: \n");
+            System.out.println(ispisniObjekt.toString());
+            if (sc.hasNextInt()) {
+                optionSelected = sc.nextInt();
+            }
+            sc.nextLine();
+            switch (optionSelected) {
+                case 1:
+                    System.out.println("\nUnesite ime za registraciju: \n");
+                    name = sc.nextLine();
+                    ph.addPlayer(name, ServerCommandRetriever.registerPlayer(name));
+                    //System.out.println(ServerCommandRetriever.registerPlayer(name));
 
-                name = sc.nextLine();
-                //ph.getIdWithName(name);
+                    break;
 
-                System.out.println(ServerCommandRetriever.makeNewGame("8457754432790416709"));
+                case 2:
+                    System.out.println("\n Unesite ime po kojem zelite igru: \n");
 
-                break; //TODO : dodati object i metodu za dohvacanje igra slanjem ID-a
+                    name = sc.nextLine();
+                    //ph.getIdWithName(name);
 
-            case 3:
-                System.out.println("\n Unesite ime po kojem zelite predati rijesenje  \n");
+                    System.out.println(ServerCommandRetriever.makeNewGame("8457754432790416709"));
 
-                name = sc.nextLine();
-               
+                    break; //TODO : dodati object i metodu za dohvacanje igra slanjem ID-a
 
-                System.out.println("\n Unesite Vase rijesenje: \n");
+                case 3:
+                    System.out.println("\n Unesite ime po kojem zelite predati rijesenje  \n");
 
-                solution = sc.nextLine();
-               
+                    name = sc.nextLine();
 
-                System.out.println(ServerCommandRetriever.checkSolution(solution, name));
-                break;//TODO : dodati object i metodu za slanje rijesenja igre slanjem ID-a
+                    System.out.println("\n Unesite Vase rijesenje: \n");
 
-            case 4:
-                System.out.println("\n Unesite ime koje zelite de-registirati: \n");
-                name = sc.nextLine();
-                System.out.println(ph.removePlayer(name));
-                //System.out.println(ServerCommandRetriever.unregisterPlayer(name));
-                break;// TODO metoda za dereg
+                    solution = sc.nextLine();
 
-            default:
-                System.out.println("\n Odabrana opcija nije moguca, birajte ponovno");
-                break;
+                    System.out.println(ServerCommandRetriever.checkSolution(solution, name));
+                    break;//TODO : dodati object i metodu za slanje rijesenja igre slanjem ID-a
+
+                case 4:
+                    System.out.println("\n Unesite ime koje zelite de-registirati: \n");
+                    name = sc.nextLine();
+                    System.out.println(ph.removePlayer(name));
+                    //System.out.println(ServerCommandRetriever.unregisterPlayer(name));
+                    break;// TODO metoda za dereg
+
+                default:
+                    System.out.println("\n Odabrana opcija nije moguca, birajte ponovno");
+                    break;
+            }
         }
     }
-    }
-    
+
 }
